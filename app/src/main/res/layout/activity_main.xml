@@ -5,31 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
+    android:background="@android:color/black"
     tools:context=".MainActivity">
 
     <TextView
+        android:fontFamily="@font/digital"
         android:id="@+id/TvInput"
         android:layout_width="match_parent"
-        android:layout_height="120sp"
-        android:background="@android:color/black"
+        android:layout_height="147dp"
+        android:background="@drawable/rounded_corner_screen_large"
         android:gravity="end"
         android:maxLines="1"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
-
-
+        android:textSize="60sp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp"
+        android:text="somethiong"
         />
 
     <TextView
         android:id="@+id/TvOutput"
+        android:fontFamily="@font/digital"
         android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:background="@android:color/black"
+        android:layout_height="87dp"
+        android:background="@drawable/rounded_corner_screen_small"
         android:gravity="end"
         android:maxLines="1"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="40sp"
+        android:paddingRight="20dp"
+        android:paddingTop="25dp"
+        android:text="somethiong"
 
         />
 
@@ -38,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@android:color/white">
+        android:background="@android:color/black">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,7 +62,7 @@
                 android:id="@+id/TvSquared"
                 android:onClick="TvSquaredOnClick"
                 style="@style/CalculationButtonStyle"
-                android:text="" />
+            android:text=""/>
 
             <TextView
                 android:id="@+id/TvPercent"

@@ -2,6 +2,7 @@ package matthewalunni.dev.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         TvOutput = findViewById(R.id.TvOutput);
         TvInput = findViewById(R.id.TvInput);
         SetInputAndOutput(InputTextViewValue, OutputTextViewValue);
+
+
     }
 
     //region Listeners
@@ -114,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
         DoNumber(".");
     }
 
+    public void  TvPlusMinusOnClick(View v) {}
+    public void TvPercentOnClick(View v) {
+
+
+    }
 
 
     //endregion Listeners
