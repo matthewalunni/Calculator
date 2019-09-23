@@ -3,6 +3,7 @@ package matthewalunni.dev.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 import java.util.logging.Level;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public String numberOne = "";
     public String numberTwo = "";
     public Boolean firstInput = true;
-    public double result = 0;
+    public double result = Double.MIN_VALUE;
     public String function = "";
     public Boolean first = true;
 
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        TextView TvSquared = findViewById(R.id.TvSquared);
+        TvSquared.setText(Html.fromHtml("x<sup>2</sup>"));
         TvOutput = findViewById(R.id.TvOutput);
         TvInput = findViewById(R.id.TvInput);
         SetInputAndOutput(InputTextViewValue, OutputTextViewValue);
@@ -46,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         SetInputAndOutput(InputTextViewValue, OutputTextViewValue);
     }
 
-
+    public void TvSquaredOnClick(View v) {
+        DoFunction("^2");
+    }
     public void TvOneOnClick(View v) {
         DoNumber("1");
     }
@@ -106,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
         TvOutput.setText(Double.toString(result));
         numberTwo = "";
     }
+    public void TvDecimalOnClick(View v) {
+        DoNumber(".");
+    }
+
+
 
     //endregion Listeners
 
@@ -151,6 +160,18 @@ public class MainActivity extends AppCompatActivity {
             }
             case "/": {
                 result =  Double.parseDouble(numberOne) / Double.parseDouble(numberTwo);
+                break;
+            }
+            case "^2": {
+                if (result == Double.MIN_VALUE && numberOne == "") {
+                    result = 0;
+                }
+                else if (numberTwo == ""){
+                    result = Double.parseDouble(numberOne)*Double.parseDouble(numberOne);
+                }
+                else {
+                    result =  Double.parseDouble(numberTwo) * Double.parseDouble(numberTwo);
+                }
                 break;
             }
             default: {

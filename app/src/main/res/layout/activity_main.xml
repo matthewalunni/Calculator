@@ -53,10 +53,10 @@
                 android:text="C" />
 
             <TextView
-                android:id="@+id/TvBrackets"
-                android:onClick="TvBracketsOnClick"
+                android:id="@+id/TvSquared"
+                android:onClick="TvSquaredOnClick"
                 style="@style/CalculationButtonStyle"
-                android:text="( )" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/TvPercent"
