@@ -117,7 +117,42 @@ public class MainActivity extends AppCompatActivity {
         DoNumber(".");
     }
 
-    public void  TvPlusMinusOnClick(View v) {}
+    public void  TvPlusMinusOnClick(View v) {
+        if (firstInput) {
+            if(numberOne.contains("-")) {
+                //remove all instances of -
+                numberOne = numberOne.replace("-", "");
+            }
+            else {
+                numberOne = "-" + numberOne;
+            }
+            TvInput.setText("");
+            InputTextViewValue = numberOne;
+        }
+        else {
+
+            if(numberTwo.contains("-")) {
+                //remove all instances of -
+                numberTwo = numberTwo.replace("-", "");
+            }
+            else {
+                numberTwo = "-" + numberTwo;
+            }
+
+
+            //add result to string instead of numberone if equals has already been pushed
+            if (result == Double.MIN_VALUE) {
+                InputTextViewValue = "";
+                InputTextViewValue = numberOne + " " + function + " " + numberTwo;
+            }
+            else {
+                InputTextViewValue = "";
+                InputTextViewValue = result + " " + function + " " + numberTwo;
+            }
+        }
+
+        TvInput.setText(InputTextViewValue);
+    }
     public void TvPercentOnClick(View v) {
 
 
@@ -190,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
     //endregion Methods
 
 }
