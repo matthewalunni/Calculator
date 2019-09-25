@@ -188,41 +188,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ChooseFunction(@org.jetbrains.annotations.NotNull String afunction) {
-        switch (afunction){
-            case "+": {
-                result = Double.parseDouble(numberOne) + Double.parseDouble(numberTwo);
-                break;
-            }
-            case "-": {
-                result =  Double.parseDouble(numberOne) - Double.parseDouble(numberTwo);
-                break;
-            }
-            case "x": {
-                result =  Double.parseDouble(numberOne) * Double.parseDouble(numberTwo);
-                break;
-            }
-            case "/": {
-                result =  Double.parseDouble(numberOne) / Double.parseDouble(numberTwo);
-                break;
-            }
-            case "^2": {
-                if (result == Double.MIN_VALUE && numberOne == "") {
-                    result = 0;
+
+        try {
+            switch (afunction){
+                case "+": {
+                    result = Double.parseDouble(numberOne) + Double.parseDouble(numberTwo);
+                    break;
                 }
-                else if (numberTwo == ""){
-                    result = Double.parseDouble(numberOne)*Double.parseDouble(numberOne);
+                case "-": {
+                    result =  Double.parseDouble(numberOne) - Double.parseDouble(numberTwo);
+                    break;
                 }
-                else {
-                    result =  Double.parseDouble(numberTwo) * Double.parseDouble(numberTwo);
+                case "x": {
+                    result =  Double.parseDouble(numberOne) * Double.parseDouble(numberTwo);
+                    break;
                 }
-                break;
-            }
-            default: {
-                _Logger.log(Level.ALL, "Case statement didn't catch", afunction);
-                result =  -1;
-                break;
+                case "/": {
+                    result =  Double.parseDouble(numberOne) / Double.parseDouble(numberTwo);
+                    break;
+                }
+                case "^2": {
+                    if (result == Double.MIN_VALUE && numberOne == "") {
+                        result = 0;
+                    }
+                    else if (numberTwo == ""){
+                        result = Double.parseDouble(numberOne)*Double.parseDouble(numberOne);
+                    }
+                    else {
+                        result =  Double.parseDouble(numberTwo) * Double.parseDouble(numberTwo);
+                    }
+                    break;
+                }
+                default: {
+                    _Logger.log(Level.ALL, "Case statement didn't catch", afunction);
+                    result =  -1;
+                    break;
+                }
             }
         }
+        catch (Exception e) {
+            result = -1;
+        }
+
 
     }
 
