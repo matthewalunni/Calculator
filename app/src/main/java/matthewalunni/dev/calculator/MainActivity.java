@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView TvSquared = findViewById(R.id.TvSquared);
-        TvSquared.setText(Html.fromHtml("x<sup>2</sup>"));
         TvOutput = findViewById(R.id.TvOutput);
         TvInput = findViewById(R.id.TvInput);
         SetInputAndOutput(InputTextViewValue, OutputTextViewValue);
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //unused
     public void TvSquaredOnClick(View v) {
         DoFunction("^2");
     }
@@ -91,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
     public void TvZeroOnClick(View v) {
         DoNumber("0");
     }
-
     public void TvAddOnClick(View v) {
         DoFunction("+");
     }
@@ -104,40 +102,9 @@ public class MainActivity extends AppCompatActivity {
     public void TvDivideOnClick(View v) {
         DoFunction("/");
     }
-    public void TvEqualsOnClick(View v) {
-        try {
-            if(functionCount > 1 || InputTextViewValue.contains("(") || InputTextViewValue.contains(")")) {
-                result = Helper.Evaluate(InputTextViewValue);
-            }
-            else {
-                if (first) {
-                    first = false;
-                    //numberTwo = input;
-                }
-                else {
-                    numberOne = Double.toString(result);
-
-                }
-
-                ChooseFunction(function);
-                numberTwo = "";
-            }
-
-            InputTextViewValue = "";
-            TvInput.setText(InputTextViewValue);
-            TvOutput.setText(Double.toString(result));
-            functionCount = 0;
-        }
-        catch (Exception ex) {
-            _Logger.log(Level.ALL, ex.toString());
-            TvInput.setText("Error");
-        }
-
-    }
     public void TvDecimalOnClick(View v) {
         DoNumber(".");
     }
-
     public void  TvPlusMinusOnClick(View v) {
         try {
             if (firstInput) {
@@ -180,11 +147,42 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    public void TvPercentOnClick(View v) {
+    public void TvLeftBracketOnClick(View v) {
+        DoNumber("(");
+    }
+    public void TvRightBracketOnClick(View v) {
+        DoNumber(")");
+    }
+    public void TvEqualsOnClick(View v) {
+        try {
+            if(functionCount > 1 || InputTextViewValue.contains("(") || InputTextViewValue.contains(")")) {
+                result = Helper.Evaluate(InputTextViewValue);
+            }
+            else {
+                if (first) {
+                    first = false;
+                    //numberTwo = input;
+                }
+                else {
+                    numberOne = Double.toString(result);
 
+                }
+
+                ChooseFunction(function);
+                numberTwo = "";
+            }
+
+            InputTextViewValue = "";
+            TvInput.setText(InputTextViewValue);
+            TvOutput.setText(Double.toString(result));
+            functionCount = 0;
+        }
+        catch (Exception ex) {
+            _Logger.log(Level.ALL, ex.toString());
+            TvInput.setText("Error");
+        }
 
     }
-
 
     //endregion Listeners
 

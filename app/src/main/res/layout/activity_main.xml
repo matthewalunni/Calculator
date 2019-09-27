@@ -55,20 +55,20 @@
             <TextView
                 android:id="@+id/TvClear"
                 android:onClick="TvClearOnClick"
-                style="@style/CalculationButtonStyle"
+                style="@style/DynamicButtonStyle"
                 android:text="C" />
 
             <TextView
                 android:id="@+id/TvSquared"
-                android:onClick="TvSquaredOnClick"
-                style="@style/CalculationButtonStyle"
-            android:text=""/>
+                android:onClick="TvLeftBracketOnClick"
+                style="@style/DynamicButtonStyle"
+            android:text="("/>
 
             <TextView
                 android:id="@+id/TvPercent"
-                android:onClick="TvPercentOnClick"
-                style="@style/CalculationButtonStyle"
-                android:text="%" />
+                android:onClick="TvRightBracketOnClick"
+                style="@style/DynamicButtonStyle"
+                android:text=")" />
 
             <TextView
                 android:id="@+id/TvDivide"
@@ -178,7 +178,7 @@
             <TextView
                 android:id="@+id/TvPlusMinus"
                 android:onClick="TvPlusMinusOnClick"
-                style="@style/NumberButtonStyle"
+                style="@style/DynamicButtonStyle"
                 android:text="+/-" />
 
             <TextView
