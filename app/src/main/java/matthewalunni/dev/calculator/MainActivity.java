@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     result =  Double.parseDouble(numberOne) - Double.parseDouble(numberTwo);
                     break;
                 }
-                case "x": {
+                case "*": {
                     result =  Double.parseDouble(numberOne) * Double.parseDouble(numberTwo);
                     break;
                 }
