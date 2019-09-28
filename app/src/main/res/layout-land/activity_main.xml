@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,35 +9,37 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:fontFamily="@font/digital"
         android:id="@+id/TvInput"
         android:layout_width="match_parent"
-        android:layout_height="147dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_screen_large"
+        android:fontFamily="@font/digital"
         android:gravity="end"
         android:maxLines="1"
-        android:textColor="@android:color/white"
-        android:textSize="60sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:paddingTop="40dp"
-        android:text="0.0"
-        />
+        android:text="something"
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/TvOutput"
-        android:fontFamily="@font/digital"
         android:layout_width="match_parent"
-        android:layout_height="87dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_screen_small"
+        android:fontFamily="@font/digital"
         android:gravity="end"
         android:maxLines="1"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:paddingTop="25dp"
-        android:text="0.0"
+        android:text="something"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+
         />
 
     <!-- Buttons -->
@@ -62,7 +65,7 @@
                 android:id="@+id/TvSquared"
                 android:onClick="TvLeftBracketOnClick"
                 style="@style/DynamicButtonStyle"
-            android:text="("/>
+                android:text="("/>
 
             <TextView
                 android:id="@+id/TvPercent"
